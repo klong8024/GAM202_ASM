@@ -20,6 +20,10 @@
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
 
+#ignore heavy assets
+Assets/Models/
+Assets/Sources/
+
 # Recordings can get excessive in size
 /[Rr]ecordings/
 
