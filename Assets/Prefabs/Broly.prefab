@@ -1530,6 +1530,7 @@ GameObject:
   - component: {fileID: 7259295075162174405}
   - component: {fileID: 7404446465854199196}
   - component: {fileID: 3780842404346186817}
+  - component: {fileID: 2732197882660444150}
   m_Layer: 0
   m_Name: Broly
   m_TagString: Player
@@ -1605,9 +1606,9 @@ MonoBehaviour:
     rotationSpeed: 16
     walkByDefault: 0
     rotateWithCamera: 0
-    walkSpeed: 4
-    runningSpeed: 8
-    sprintSpeed: 10
+    walkSpeed: 8
+    runningSpeed: 12
+    sprintSpeed: 15
   strafeSpeed:
     movementSmooth: 6
     animationSmooth: 0.2
@@ -1621,7 +1622,7 @@ MonoBehaviour:
   jumpAndRotate: 1
   jumpTimer: 0.5
   jumpHeight: 8
-  airSpeed: 5
+  airSpeed: 8
   airSmooth: 6
   extraGravity: -10
   limitFallVelocity: -15
@@ -1701,10 +1702,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.72992903
+  m_Radius: 0.97532654
   m_Height: 5.7092056
   m_Direction: 1
-  m_Center: {x: -0.08973622, y: 2.8546028, z: -0.06033468}
+  m_Center: {x: -0.08973622, y: 2.8546028, z: 0.02760315}
 --- !u!114 &7259295075162174405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1731,8 +1732,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttributesManager
   health: 100
-  damage: 10
+  damage: 30
   armor: 0
+  isDead: 0
+  gemPrefab: {fileID: 0}
   critDamage: 1.5
   critChance: 0.5
 --- !u!114 &3780842404346186817
@@ -1749,6 +1752,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponManager
   weapon: {fileID: 2992332257741049135}
   tcp: {fileID: 7553304369654399225}
+--- !u!114 &2732197882660444150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3955557837846080845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45564021ba43dc84fac10a600a57908b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerGem
+  totalGem: 0
 --- !u!1 &4461768090137580027
 GameObject:
   m_ObjectHideFlags: 0
