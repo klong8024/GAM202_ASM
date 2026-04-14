@@ -1,18 +1,19 @@
 using UnityEngine;
-
 public class IdleState : StateMachineBehaviour
 {
-    float time;
-
+    Transform player; 
+    public float chaseRange = 10f;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        time = 0;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
-
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        time += Time.deltaTime;
-        if (time > 3)
-            animator.SetBool("isPatrolling", true);
+        float distance = Vector3.Distance(player.position, animator.transform.position);
+        if (distance < chaseRange)
+        {
+            animator.SetBool("isChasing", true);
+        }
     }
 }
+

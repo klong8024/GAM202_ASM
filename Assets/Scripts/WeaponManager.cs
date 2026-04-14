@@ -5,6 +5,18 @@ public class WeaponManager : MonoBehaviour
 {
     public GameObject weapon;
     public vThirdPersonController tcp; //Bổ sung
+
+    void Start()
+    {
+        if (weapon != null)
+        {
+            Collider col = weapon.GetComponent<Collider>();
+            if (col != null)
+            {
+                col.enabled = false;
+            }
+        }
+    }
     public void EnableWeaponCollider (int isEnable)
     {
         if (weapon != null)
